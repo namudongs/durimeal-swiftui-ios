@@ -11,11 +11,11 @@ import SwiftSoup
 
 struct ContentView: View {
     var body: some View {
-        Button(action: {
-            fetchAndPrintMenu()
-        }, label: {
-            Text("식단표 불러오기")
-        })
+            Button(action: {
+                fetchAndPrintMenu()
+            }, label: {
+                Text("식단표 불러오기")
+            })
     }
     
     func fetchAndPrintMenu() {
@@ -29,7 +29,6 @@ struct ContentView: View {
                 }
                 
                 if let data = data, let html = String(data: data, encoding: .utf8) {
-                    print("Parsing Start")
                     // HTML 파싱
                     do {
                         let doc: Document = try SwiftSoup.parse(html)
@@ -40,12 +39,16 @@ struct ContentView: View {
                             let menus = try day.select("td")
                             
                             for menu in menus {
-                                let menuItems = try menu.html().components(separatedBy: "<br>").filter { !$0.isEmpty }
-                                let cleanedMenuItems = menuItems.compactMap { try? SwiftSoup.clean($0, Whitelist.none()) }
+                                let menuItems = try menu.html().components(separatedBy: "<br>")
+                                    .filter { !$0.isEmpty }
+                                let cleanedMenuItems = menuItems
+                                    .compactMap { try? SwiftSoup.clean($0, Whitelist.none()) }
                                 dayMenus.append(contentsOf: cleanedMenuItems)
+                                
                             }
-                            
-                            print(dayMenus) // 출력
+                            if dayMenus.count == 3 {
+                                print(dayMenus)
+                            }
                         }
                     } catch Exception.Error(let type, let message) {
                         print("Type: \(type), Message: \(message)")
