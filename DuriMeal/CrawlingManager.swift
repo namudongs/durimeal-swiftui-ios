@@ -10,30 +10,46 @@ import SwiftSoup
 import Alamofire
 
 struct CrawlingManager {
-    func fetchDailyMenu() {
+    func fetchDailyMenu(completion: @escaping ([Meal]) -> Void) {
         let urlStr = "https://knudorm.kangwon.ac.kr/content/K11"
-        
-        AF.request(urlStr).responseString { (response) in
-            guard let html = response.value else {
-                return
-            }
-            
-            do {
-                // 재정생활관 새롬관 (#latest02)
-                // 요일 = tr:nth-child("월2, 화3, 수4, 목5, 금6, 토7, 일8") > td:nth-child("아침2, 점심3, 저녁4")
-                
-                // 재정생활관 이룸관 (#latest03)
-                // 요일 = tr:nth-child("월2, 화3, 수4, 목5, 금6, 토7, 일8") > td:nth-child("아침2, 점심3, 저녁4")
-                
-                let doc: Document = try SwiftSoup.parse(html)
-                let elements: Elements = try doc.select("#latest03 > div")
-                for element in elements {
-                    print(try element.select("tr:nth-child(2) > td:nth-child(2)").text())
-                }
-                
-            } catch {
-                print("error")
-            }
+        AF.request(urlStr).responseString { response in
+            guard let html = response.value else { return }
+            let meals = parseHTML(html: html)
+            completion(meals)
         }
+    }
+    
+    func parseHTML(html: String) -> [Meal] {
+        let dormitories = ["#latest02": "새롬관", "#latest03": "이룸관"] // 새롬관과 이룸관
+        let days = ["월": 2, "화": 3, "수": 4, "목": 5, "금": 6, "토": 7, "일": 8]
+        let times = ["아침": 2, "점심": 3, "저녁": 4]
+        var meals: [Meal] = []
+        
+        do {
+            let doc: Document = try SwiftSoup.parse(html)
+                    for (index, domitory) in dormitories {
+                        for (day, dayIndex) in days {
+                            for (time, timeIndex) in times {
+                                let elements: Elements = try doc.select("\(index) > div")
+                                for element in elements {
+                                    let ele = try element.select("tr:nth-child(\(dayIndex)) > td:nth-child(\(timeIndex))").text()
+//                                    print(ele)
+                                    if ele.isEmpty || ele.contains("~") {
+                                        continue
+                                    }
+                                    let meal = Meal(domitory: domitory, day: day, time: time, menu: ele)
+                                    print(meal)
+                                    meals.append(meal)
+                                }
+                            }
+                        }
+                    }
+        } catch Exception.Error(_, let message) {
+            print("Parsing error: \(message)")
+        } catch {
+            print("Unknown error")
+        }
+        
+        return meals
     }
 }
