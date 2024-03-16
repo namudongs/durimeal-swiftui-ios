@@ -13,6 +13,8 @@
 		179790132B9C39F30094F918 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 179790122B9C39F30094F918 /* Preview Assets.xcassets */; };
 		179790152B9C39F30094F918 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179790142B9C39F30094F918 /* Persistence.swift */; };
 		179790182B9C39F30094F918 /* DuriMeal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 179790162B9C39F30094F918 /* DuriMeal.xcdatamodeld */; };
+		17DAA41A2BA578AA00FB63CA /* CrawlingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAA4192BA578AA00FB63CA /* CrawlingManager.swift */; };
+		4E1A64A0A23D822BD7D7D6B6 /* Pods_DuriMeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7532406B36C6CDD5E0C205 /* Pods_DuriMeal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,8 +27,10 @@
 		179790172B9C39F30094F918 /* DuriMeal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DuriMeal.xcdatamodel; sourceTree = "<group>"; };
 		179790192B9C39F30094F918 /* DuriMeal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DuriMeal.entitlements; sourceTree = "<group>"; };
 		1797901A2B9C39F30094F918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		17DAA4192BA578AA00FB63CA /* CrawlingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrawlingManager.swift; sourceTree = "<group>"; };
 		2100CC2B35E3277BB629CF22 /* Pods-DuriMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuriMeal.release.xcconfig"; path = "Target Support Files/Pods-DuriMeal/Pods-DuriMeal.release.xcconfig"; sourceTree = "<group>"; };
 		776BFA85B0C4DA2678857734 /* Pods-DuriMeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuriMeal.debug.xcconfig"; path = "Target Support Files/Pods-DuriMeal/Pods-DuriMeal.debug.xcconfig"; sourceTree = "<group>"; };
+		EE7532406B36C6CDD5E0C205 /* Pods_DuriMeal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DuriMeal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E1A64A0A23D822BD7D7D6B6 /* Pods_DuriMeal.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +74,7 @@
 				1797901A2B9C39F30094F918 /* Info.plist */,
 				179790162B9C39F30094F918 /* DuriMeal.xcdatamodeld */,
 				179790112B9C39F30094F918 /* Preview Content */,
+				17DAA4192BA578AA00FB63CA /* CrawlingManager.swift */,
 			);
 			path = DuriMeal;
 			sourceTree = "<group>";
@@ -84,6 +90,7 @@
 		3E4177557C9637ABD908E606 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EE7532406B36C6CDD5E0C205 /* Pods_DuriMeal.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 				179790182B9C39F30094F918 /* DuriMeal.xcdatamodeld in Sources */,
 				179790152B9C39F30094F918 /* Persistence.swift in Sources */,
 				1797900E2B9C39F20094F918 /* ContentView.swift in Sources */,
+				17DAA41A2BA578AA00FB63CA /* CrawlingManager.swift in Sources */,
 				1797900C2B9C39F20094F918 /* DuriMealApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

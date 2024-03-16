@@ -6,4 +6,5 @@ target 'DuriMeal' do
   use_frameworks!
   # Pods for DuriMeal
   pod 'SwiftSoup'
+  pod 'Alamofire'
 end
