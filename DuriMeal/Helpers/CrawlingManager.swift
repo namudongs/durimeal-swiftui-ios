@@ -33,12 +33,10 @@ struct CrawlingManager {
                                 let elements: Elements = try doc.select("\(index) > div")
                                 for element in elements {
                                     let ele = try element.select("tr:nth-child(\(dayIndex)) > td:nth-child(\(timeIndex))").text()
-//                                    print(ele)
                                     if ele.isEmpty || ele.contains("~") {
                                         continue
                                     }
-                                    let meal = Meal(domitory: domitory, day: day, time: time, menu: ele)
-                                    print(meal)
+                                    let meal = Meal(place: domitory, day: day, time: time, menu: ele)
                                     meals.append(meal)
                                 }
                             }

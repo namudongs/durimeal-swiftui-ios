@@ -21,7 +21,11 @@ struct ContentView: View {
             Text("식단표 불러오기")
         })
         Button {
-//            print(self.meals)
+            for meal in meals {
+                if meal.place == "이룸관" {
+                    print(meal)
+                }
+            }
         } label: {
             Text("식단표 프린트하기")
         }

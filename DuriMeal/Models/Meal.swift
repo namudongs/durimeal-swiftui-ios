@@ -8,7 +8,7 @@
 import Foundation
 
 struct Meal {
-    var domitory: String
+    var place: String
     var day: String
     var time: String
     var menu: String

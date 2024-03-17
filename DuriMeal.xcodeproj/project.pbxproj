@@ -68,16 +68,16 @@
 		1797900A2B9C39F20094F918 /* DuriMeal */ = {
 			isa = PBXGroup;
 			children = (
+				17DAA41F2BA6CE1100FB63CA /* Helpers */,
+				17DAA41E2BA6CE0700FB63CA /* Views */,
+				17DAA41D2BA6CE0000FB63CA /* Models */,
 				1797900B2B9C39F20094F918 /* DuriMealApp.swift */,
-				1797900D2B9C39F20094F918 /* ContentView.swift */,
-				1797900F2B9C39F30094F918 /* Assets.xcassets */,
 				179790142B9C39F30094F918 /* Persistence.swift */,
+				1797900F2B9C39F30094F918 /* Assets.xcassets */,
 				179790192B9C39F30094F918 /* DuriMeal.entitlements */,
-				1797901A2B9C39F30094F918 /* Info.plist */,
 				179790162B9C39F30094F918 /* DuriMeal.xcdatamodeld */,
+				1797901A2B9C39F30094F918 /* Info.plist */,
 				179790112B9C39F30094F918 /* Preview Content */,
-				17DAA4192BA578AA00FB63CA /* CrawlingManager.swift */,
-				17DAA41B2BA5797A00FB63CA /* Meal.swift */,
 			);
 			path = DuriMeal;
 			sourceTree = "<group>";
@@ -88,6 +88,30 @@
 				179790122B9C39F30094F918 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		17DAA41D2BA6CE0000FB63CA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				17DAA41B2BA5797A00FB63CA /* Meal.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		17DAA41E2BA6CE0700FB63CA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1797900D2B9C39F20094F918 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		17DAA41F2BA6CE1100FB63CA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				17DAA4192BA578AA00FB63CA /* CrawlingManager.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		3E4177557C9637ABD908E606 /* Frameworks */ = {
