@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Meal {
+struct Meal: Identifiable {
+    let id = UUID()
     var place: String
     var day: String
     var time: String

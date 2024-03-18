@@ -9,12 +9,12 @@ import Foundation
 import SwiftSoup
 import Alamofire
 
-struct CrawlingManager {
+class CrawlingManager {
     func fetchDailyMenu(completion: @escaping ([Meal]) -> Void) {
         let urlStr = "https://knudorm.kangwon.ac.kr/content/K11"
         AF.request(urlStr).responseString { response in
             guard let html = response.value else { return }
-            let meals = parseHTML(html: html)
+            let meals = self.parseHTML(html: html)
             completion(meals)
         }
     }
@@ -23,6 +23,9 @@ struct CrawlingManager {
         let dormitories = ["#latest02": "새롬관", "#latest03": "이룸관"] // 새롬관과 이룸관
         let days = ["월": 2, "화": 3, "수": 4, "목": 5, "금": 6, "토": 7, "일": 8]
         let times = ["아침": 2, "점심": 3, "저녁": 4]
+        let dayOrder = ["월": 1, "화": 2, "수": 3, "목": 4, "금": 5, "토": 6, "일": 7]
+        let timeOrder = ["아침": 1, "점심": 2, "저녁": 3]
+
         var meals: [Meal] = []
         
         do {
@@ -38,6 +41,16 @@ struct CrawlingManager {
                                     }
                                     let meal = Meal(place: domitory, day: day, time: time, menu: ele)
                                     meals.append(meal)
+                                    
+                                    meals.sort { (meal1, meal2) -> Bool in
+                                            if let day1Order = dayOrder[meal1.day], let day2Order = dayOrder[meal2.day] {
+                                                if day1Order == day2Order {
+                                                    return (timeOrder[meal1.time] ?? 0) < (timeOrder[meal2.time] ?? 0)
+                                                }
+                                                return day1Order < day2Order
+                                            }
+                                            return false
+                                        }
                                 }
                             }
                         }
