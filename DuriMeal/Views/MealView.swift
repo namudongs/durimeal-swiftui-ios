@@ -15,7 +15,9 @@ struct MealView: View {
         List(meals) { meal in
             VStack(alignment: .leading) {
                 Text("\(meal.place) \(meal.day)요일 \(meal.time)")
-                Text(meal.menu)
+                    .font(.footnote.bold())
+                Text(meal.menu.replacingOccurrences(of: " ", with: "\n"))
+                    .font(.caption)
             }
         }
     }
