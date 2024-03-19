@@ -20,7 +20,7 @@ class CrawlingManager {
     }
     
     func parseHTML(html: String) -> [Meal] {
-        let dormitories = ["#latest02": "새롬관", "#latest03": "이룸관"] // 새롬관과 이룸관
+        let place = ["#latest02": "새롬관", "#latest03": "이룸관"]
         let days = ["월": 2, "화": 3, "수": 4, "목": 5, "금": 6, "토": 7, "일": 8]
         let times = ["아침": 2, "점심": 3, "저녁": 4]
         let dayOrder = ["월": 1, "화": 2, "수": 3, "목": 4, "금": 5, "토": 6, "일": 7]
@@ -30,7 +30,7 @@ class CrawlingManager {
         
         do {
             let doc: Document = try SwiftSoup.parse(html)
-                    for (index, domitory) in dormitories {
+                    for (index, domitory) in place {
                         for (day, dayIndex) in days {
                             for (time, timeIndex) in times {
                                 let elements: Elements = try doc.select("\(index) > div")
