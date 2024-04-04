@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1771FCB82BBE461800401DFF /* NavigationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771FCB72BBE461800401DFF /* NavigationHeader.swift */; };
 		1771FCBD2BBE484C00401DFF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771FCBC2BBE484C00401DFF /* HomeView.swift */; };
+		1771FCC02BBE49D300401DFF /* WeekdaySelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771FCBF2BBE49D300401DFF /* WeekdaySelector.swift */; };
 		1797900C2B9C39F20094F918 /* DuriMealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797900B2B9C39F20094F918 /* DuriMealApp.swift */; };
 		1797900E2B9C39F20094F918 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797900D2B9C39F20094F918 /* ContentView.swift */; };
 		179790102B9C39F30094F918 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1797900F2B9C39F30094F918 /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		1771FCB72BBE461800401DFF /* NavigationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHeader.swift; sourceTree = "<group>"; };
 		1771FCBC2BBE484C00401DFF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		1771FCBF2BBE49D300401DFF /* WeekdaySelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekdaySelector.swift; sourceTree = "<group>"; };
 		179790082B9C39F20094F918 /* DuriMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuriMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1797900B2B9C39F20094F918 /* DuriMealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuriMealApp.swift; sourceTree = "<group>"; };
 		1797900D2B9C39F20094F918 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				1771FCB72BBE461800401DFF /* NavigationHeader.swift */,
+				1771FCBF2BBE49D300401DFF /* WeekdaySelector.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -289,6 +292,7 @@
 				17DAA4262BA7DAD900FB63CA /* MealViewModel.swift in Sources */,
 				1771FCB82BBE461800401DFF /* NavigationHeader.swift in Sources */,
 				17DAA41A2BA578AA00FB63CA /* CrawlingManager.swift in Sources */,
+				1771FCC02BBE49D300401DFF /* WeekdaySelector.swift in Sources */,
 				17DAA41C2BA5797A00FB63CA /* Meal.swift in Sources */,
 				1797900C2B9C39F20094F918 /* DuriMealApp.swift in Sources */,
 			);

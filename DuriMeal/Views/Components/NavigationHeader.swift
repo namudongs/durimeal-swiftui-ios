@@ -17,7 +17,7 @@ struct NavigationHeader: View {
             }, label: {
                 Image(systemName: "chevron.down")
                     .resizable()
-                    .frame(width: 20, height: 15)
+                    .frame(width: 20, height: 10)
                     .foregroundColor(.gray)
                     .padding(.leading, 20)
             })

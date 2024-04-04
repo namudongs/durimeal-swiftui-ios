@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct HomeView: View {
+    
     var body: some View {
         VStack {
             NavigationHeader().padding(.top, 10)
+            WeekdaySelector()
             Spacer()
         }
     }
