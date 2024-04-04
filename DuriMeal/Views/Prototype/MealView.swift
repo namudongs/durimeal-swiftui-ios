@@ -14,10 +14,10 @@ struct MealView: View {
     var body: some View {
         List(meals) { meal in
             VStack(alignment: .leading) {
-                Text("\(meal.place) \(meal.day)요일 \(meal.time)")
-                    .font(.footnote.bold())
+                Text("\(meal.time)")
+                    .font(.headline)
                 Text(meal.menu.replacingOccurrences(of: " ", with: "\n"))
-                    .font(.caption)
+                    .font(.subheadline)
             }
         }
     }

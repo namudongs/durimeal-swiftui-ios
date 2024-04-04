@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1771FCB82BBE461800401DFF /* NavigationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771FCB72BBE461800401DFF /* NavigationHeader.swift */; };
+		1771FCBD2BBE484C00401DFF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1771FCBC2BBE484C00401DFF /* HomeView.swift */; };
 		1797900C2B9C39F20094F918 /* DuriMealApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797900B2B9C39F20094F918 /* DuriMealApp.swift */; };
 		1797900E2B9C39F20094F918 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1797900D2B9C39F20094F918 /* ContentView.swift */; };
 		179790102B9C39F30094F918 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1797900F2B9C39F30094F918 /* Assets.xcassets */; };
@@ -16,12 +18,13 @@
 		17DAA41A2BA578AA00FB63CA /* CrawlingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAA4192BA578AA00FB63CA /* CrawlingManager.swift */; };
 		17DAA41C2BA5797A00FB63CA /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAA41B2BA5797A00FB63CA /* Meal.swift */; };
 		17DAA4212BA7CDD600FB63CA /* MealView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAA4202BA7CDD600FB63CA /* MealView.swift */; };
-		17DAA4232BA7CFBA00FB63CA /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAA4222BA7CFBA00FB63CA /* Place.swift */; };
 		17DAA4262BA7DAD900FB63CA /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAA4252BA7DAD900FB63CA /* MealViewModel.swift */; };
 		4E1A64A0A23D822BD7D7D6B6 /* Pods_DuriMeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7532406B36C6CDD5E0C205 /* Pods_DuriMeal.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1771FCB72BBE461800401DFF /* NavigationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationHeader.swift; sourceTree = "<group>"; };
+		1771FCBC2BBE484C00401DFF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		179790082B9C39F20094F918 /* DuriMeal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DuriMeal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1797900B2B9C39F20094F918 /* DuriMealApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DuriMealApp.swift; sourceTree = "<group>"; };
 		1797900D2B9C39F20094F918 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -34,7 +37,6 @@
 		17DAA4192BA578AA00FB63CA /* CrawlingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrawlingManager.swift; sourceTree = "<group>"; };
 		17DAA41B2BA5797A00FB63CA /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		17DAA4202BA7CDD600FB63CA /* MealView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealView.swift; sourceTree = "<group>"; };
-		17DAA4222BA7CFBA00FB63CA /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		17DAA4252BA7DAD900FB63CA /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 		2100CC2B35E3277BB629CF22 /* Pods-DuriMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuriMeal.release.xcconfig"; path = "Target Support Files/Pods-DuriMeal/Pods-DuriMeal.release.xcconfig"; sourceTree = "<group>"; };
 		776BFA85B0C4DA2678857734 /* Pods-DuriMeal.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuriMeal.debug.xcconfig"; path = "Target Support Files/Pods-DuriMeal/Pods-DuriMeal.debug.xcconfig"; sourceTree = "<group>"; };
@@ -53,6 +55,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1771FCB92BBE461D00401DFF /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1771FCB72BBE461800401DFF /* NavigationHeader.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1771FCBE2BBE489300401DFF /* Prototype */ = {
+			isa = PBXGroup;
+			children = (
+				1797900D2B9C39F20094F918 /* ContentView.swift */,
+				17DAA4202BA7CDD600FB63CA /* MealView.swift */,
+			);
+			path = Prototype;
+			sourceTree = "<group>";
+		};
 		17978FFF2B9C39F20094F918 = {
 			isa = PBXGroup;
 			children = (
@@ -101,7 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				17DAA41B2BA5797A00FB63CA /* Meal.swift */,
-				17DAA4222BA7CFBA00FB63CA /* Place.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -109,8 +127,9 @@
 		17DAA41E2BA6CE0700FB63CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				1797900D2B9C39F20094F918 /* ContentView.swift */,
-				17DAA4202BA7CDD600FB63CA /* MealView.swift */,
+				1771FCBE2BBE489300401DFF /* Prototype */,
+				1771FCB92BBE461D00401DFF /* Components */,
+				1771FCBC2BBE484C00401DFF /* HomeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -265,9 +284,10 @@
 				179790182B9C39F30094F918 /* DuriMeal.xcdatamodeld in Sources */,
 				179790152B9C39F30094F918 /* Persistence.swift in Sources */,
 				1797900E2B9C39F20094F918 /* ContentView.swift in Sources */,
-				17DAA4232BA7CFBA00FB63CA /* Place.swift in Sources */,
+				1771FCBD2BBE484C00401DFF /* HomeView.swift in Sources */,
 				17DAA4212BA7CDD600FB63CA /* MealView.swift in Sources */,
 				17DAA4262BA7DAD900FB63CA /* MealViewModel.swift in Sources */,
+				1771FCB82BBE461800401DFF /* NavigationHeader.swift in Sources */,
 				17DAA41A2BA578AA00FB63CA /* CrawlingManager.swift in Sources */,
 				17DAA41C2BA5797A00FB63CA /* Meal.swift in Sources */,
 				1797900C2B9C39F20094F918 /* DuriMealApp.swift in Sources */,
