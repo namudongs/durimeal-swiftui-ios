@@ -10,6 +10,7 @@ import Foundation
 struct Meal: Identifiable {
     let id = UUID()
     var place: String
+    var subPlace: String?
     var day: String
     var time: String
     var menu: String

@@ -10,10 +10,10 @@ import SwiftUI
 @main
 struct DuriMealApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
-          TempView()
+            TempView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
