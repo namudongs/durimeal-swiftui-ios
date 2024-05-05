@@ -10,22 +10,20 @@ import SwiftUI
 class MealViewModel: ObservableObject {
     @Published var meals: [Meal] = []
     private var crawlingManager = DomitoryCrawlingManager()
-    private var temp = RestaurantCrawlingManager()
+    private var restaurantCrawlingManager = RestaurantCrawlingManager()
     
     init() {
         fetchMeals()
-        fetchTempMeals()
     }
     
     func fetchMeals() {
-        crawlingManager.fetchDailyMenu { [weak self] meals in
-            DispatchQueue.main.async {
-                self?.meals = meals
+            crawlingManager.fetchDailyMenu { [weak self] dormitoryMeals in
+                self?.restaurantCrawlingManager.fetchDailyMenu { restaurantMeals in
+                    DispatchQueue.main.async {
+                        self?.meals = dormitoryMeals + restaurantMeals
+                    }
+                }
             }
         }
-    }
-    
-    func fetchTempMeals() {
-        temp.fetchDailyMenu()
-    }
 }
+
