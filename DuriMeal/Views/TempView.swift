@@ -30,7 +30,7 @@ struct TempView: View {
                 // HeaderButtons End
                 ForEach(time, id: \.self) { item in
                     mealView(time: item, meals: viewModel.meals.filter {
-                        $0.place == selectedRestaurant && $0.day == "수" && $0.time == item
+                        $0.place == selectedRestaurant && $0.day == "화" && $0.time == item
                     })
                 }
             }

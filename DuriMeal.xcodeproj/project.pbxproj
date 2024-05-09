@@ -12,10 +12,9 @@
 		179790132B9C39F30094F918 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 179790122B9C39F30094F918 /* Preview Assets.xcassets */; };
 		179790152B9C39F30094F918 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179790142B9C39F30094F918 /* Persistence.swift */; };
 		179790182B9C39F30094F918 /* DuriMeal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 179790162B9C39F30094F918 /* DuriMeal.xcdatamodeld */; };
-		179A63512BE74322005D78B4 /* RestaurantCrawlingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A63502BE74322005D78B4 /* RestaurantCrawlingManager.swift */; };
+		179A63512BE74322005D78B4 /* SwiftSoupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A63502BE74322005D78B4 /* SwiftSoupManager.swift */; };
 		179A63532BE778A0005D78B4 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A63522BE778A0005D78B4 /* Int+Extension.swift */; };
 		179D4CE92BE5FEB100DF77C8 /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4CE82BE5FEB100DF77C8 /* TempView.swift */; };
-		17DAA41A2BA578AA00FB63CA /* DomitoryCrawlingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAA4192BA578AA00FB63CA /* DomitoryCrawlingManager.swift */; };
 		17DAA41C2BA5797A00FB63CA /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAA41B2BA5797A00FB63CA /* Meal.swift */; };
 		17DAA4262BA7DAD900FB63CA /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAA4252BA7DAD900FB63CA /* MealViewModel.swift */; };
 		4E1A64A0A23D822BD7D7D6B6 /* Pods_DuriMeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7532406B36C6CDD5E0C205 /* Pods_DuriMeal.framework */; };
@@ -30,10 +29,9 @@
 		179790172B9C39F30094F918 /* DuriMeal.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DuriMeal.xcdatamodel; sourceTree = "<group>"; };
 		179790192B9C39F30094F918 /* DuriMeal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DuriMeal.entitlements; sourceTree = "<group>"; };
 		1797901A2B9C39F30094F918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		179A63502BE74322005D78B4 /* RestaurantCrawlingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantCrawlingManager.swift; sourceTree = "<group>"; };
+		179A63502BE74322005D78B4 /* SwiftSoupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupManager.swift; sourceTree = "<group>"; };
 		179A63522BE778A0005D78B4 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
 		179D4CE82BE5FEB100DF77C8 /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
-		17DAA4192BA578AA00FB63CA /* DomitoryCrawlingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomitoryCrawlingManager.swift; sourceTree = "<group>"; };
 		17DAA41B2BA5797A00FB63CA /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		17DAA4252BA7DAD900FB63CA /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 		2100CC2B35E3277BB629CF22 /* Pods-DuriMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuriMeal.release.xcconfig"; path = "Target Support Files/Pods-DuriMeal/Pods-DuriMeal.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,8 +115,7 @@
 		17DAA41F2BA6CE1100FB63CA /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				17DAA4192BA578AA00FB63CA /* DomitoryCrawlingManager.swift */,
-				179A63502BE74322005D78B4 /* RestaurantCrawlingManager.swift */,
+				179A63502BE74322005D78B4 /* SwiftSoupManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -259,8 +256,7 @@
 				179D4CE92BE5FEB100DF77C8 /* TempView.swift in Sources */,
 				179A63532BE778A0005D78B4 /* Int+Extension.swift in Sources */,
 				17DAA4262BA7DAD900FB63CA /* MealViewModel.swift in Sources */,
-				17DAA41A2BA578AA00FB63CA /* DomitoryCrawlingManager.swift in Sources */,
-				179A63512BE74322005D78B4 /* RestaurantCrawlingManager.swift in Sources */,
+				179A63512BE74322005D78B4 /* SwiftSoupManager.swift in Sources */,
 				17DAA41C2BA5797A00FB63CA /* Meal.swift in Sources */,
 				1797900C2B9C39F20094F918 /* DuriMealApp.swift in Sources */,
 			);

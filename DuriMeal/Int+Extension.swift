@@ -26,4 +26,39 @@ extension Int {
             return "일"
         }
     }
+    
+    func timeIndexToString() -> String {
+        switch self {
+        case 2:
+            return "아침"
+        case 3:
+            return "점심"
+        case 4:
+            return "저녁"
+        default:
+            return "없음"
+        }
+    }
+    
+    func placeIndexToSelector() -> String {
+        switch self {
+        case 1:
+            return "#latest02"
+        case 2:
+            return "#latest03"
+        default:
+            return "없음"
+        }
+    }
+    
+    func placeIndexToString() -> String {
+        switch self {
+        case 1:
+            return "새롬관"
+        case 2:
+            return "이룸관"
+        default:
+            return "없음"
+        }
+    }
 }
