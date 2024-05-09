@@ -16,9 +16,13 @@ class MealViewModel: ObservableObject {
     }
     
     func fetchMeals() {
-        manager.fetchUnivMenus { meals in
-            DispatchQueue.main.async {
-                self.meals.append(contentsOf: meals)
+        let paramArr: [Int] = [10, 20, 30]
+        
+        for param in paramArr {
+            manager.fetchUnivMenus(param: param) { meals in
+                DispatchQueue.main.async {
+                    self.meals.append(contentsOf: meals)
+                }
             }
         }
         

@@ -14,7 +14,7 @@ struct TempView: View {
     let time = ["아침", "점심", "저녁"]
     
     var body: some View {
-        ScrollView(showsIndicators: false) {
+//        ScrollView(showsIndicators: false) {
             VStack(spacing: 20) {
                 // HeaderButtons
                 ScrollView(.horizontal, showsIndicators: false) {
@@ -22,20 +22,26 @@ struct TempView: View {
                         ForEach(restaurants, id: \.self) { restaurant in
                             restaurantButton(name: restaurant)
                             if restaurants.last != restaurant {
-                                Rectangle().frame(width: 2).foregroundStyle(.primary.opacity(0.2)).padding(.vertical, -5)
+                                Rectangle()
+                                    .frame(width: 2)
+                                    .foregroundStyle(.primary.opacity(0.2))
+                                    .padding(.vertical, -5)
                             }
                         }
                     }
+                    .frame(maxHeight: 20)
                 }
                 // HeaderButtons End
-                ForEach(time, id: \.self) { item in
-                    mealView(time: item, meals: viewModel.meals.filter {
-                        $0.place == selectedRestaurant && $0.day == "화" && $0.time == item
-                    })
+                ScrollView(showsIndicators: false) {
+                    ForEach(time, id: \.self) { item in
+                        mealView(time: item, meals: viewModel.meals.filter {
+                            $0.place == selectedRestaurant && $0.day == "화" && $0.time == item
+                        })
+                    }
                 }
             }
             .padding()
-        }
+//        }
     }
     
     @ViewBuilder
@@ -60,7 +66,10 @@ struct TempView: View {
                 Image(systemName: timeToImageString(time: time))
                 Text(time).font(.title2).bold()
             }
-            Rectangle().frame(height: 1).foregroundStyle(.primary.opacity(0.5)).padding(.vertical, -5)
+            Rectangle()
+                .frame(height: 1)
+                .foregroundStyle(.primary.opacity(0.5))
+                .padding(.vertical, -5)
             ForEach(meals) { meal in
                 Text(meal.menu.replacingOccurrences(of: " ", with: "\n"))
                     .font(.title3)

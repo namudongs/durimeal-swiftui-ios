@@ -61,4 +61,24 @@ extension Int {
             return "없음"
         }
     }
+    
+    func paramToRange() -> ClosedRange<Int> {
+        switch self {
+        case 30:
+            return 1...4
+        default:
+            return 1...6
+        }
+    }
+    
+    func paramToPlace() -> String {
+        switch self {
+        case 10:
+            return "천지관"
+        case 20:
+            return "백록관"
+        default:
+            return "두리관"
+        }
+    }
 }

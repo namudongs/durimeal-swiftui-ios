@@ -10,9 +10,9 @@ import SwiftSoup
 
 class SwiftSoupManager {
     
-    /// 천지관 메뉴를 불러오는 함수
-    func fetchUnivMenus(completion: @escaping ([Meal]) -> Void) {
-        let urlStr = URL(string: "https://wwwk.kangwon.ac.kr/www/selecttnCafMenuListWU.do?key=1077&sc1=CC20&sc2=CC")
+    /// 천지관, 백록관, 두리관 메뉴를 불러오는 함수
+    func fetchUnivMenus(param: Int, completion: @escaping ([Meal]) -> Void) {
+        let urlStr = URL(string: "https://wwwk.kangwon.ac.kr/www/selecttnCafMenuListWU.do?key=1077&sc1=CC\(param)&sc2=CC")
         guard let urlStr = urlStr else { return }
         var meals: [Meal] = []
         
@@ -29,13 +29,13 @@ class SwiftSoupManager {
                 let doc: Document = try SwiftSoup.parse(html)
                 let _: Elements = try doc.select("div.over_scroll_table").select("thead") // 일자 추적을 위한 상수
                 let tbody: Elements = try doc.select("div.over_scroll_table").select("tbody")
-                for index in 1...6 {
+                for index in param.paramToRange() {
                     let place = try tbody.select("tr:nth-child(\(index))").select("th")[0].text()
                     let time = try tbody.select("tr:nth-child(\(index))").select("th")[1].text()
                     
                     for menuIdx in 3...7 {
                         let menu = try tbody.select("tr:nth-child(\(index))").select("td:nth-child(\(menuIdx))").text()
-                        let meal = Meal(place: "백록관", subPlace: place, day: menuIdx.dayIndexToString(), time: time, menu: menu)
+                        let meal = Meal(place: param.paramToPlace(), subPlace: place, day: menuIdx.dayIndexToString(), time: time, menu: menu)
                         meals.append(meal)
                     }
                 }
