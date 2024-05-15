@@ -7,9 +7,11 @@
 
 import SwiftUI
 
-class MealViewModel: ObservableObject {
+class MainViewModel: ObservableObject {
     @Published var meals: [Meal] = []
     @Published var selectedPlace: Place = .saerom
+    @Published var day: String = "화"
+    @ScaledMetric(relativeTo: .title2) var dynamicHeight = 30
     private var manager = SwiftSoupManager()
     
     let places: [Place] = Place.allCases
@@ -37,6 +39,10 @@ class MealViewModel: ObservableObject {
         }
     }
     
-    
+    func filteredMeals(for time: Time) -> [Meal] {
+        return meals.filter {
+            $0.place == selectedPlace.rawValue && $0.day == day && $0.time == time.rawValue
+        }
+    }
 }
 
