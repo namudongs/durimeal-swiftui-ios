@@ -8,18 +8,49 @@
 import SwiftUI
 
 struct MainView: View {
+    @Environment(\.colorScheme) var scheme
     @StateObject var vm = MainViewModel()
     
     var body: some View {
-        VStack(spacing: 20) {
-            HeaderButton(vm: vm)
-            ScrollView(showsIndicators: false) {
-                ForEach(vm.times, id: \.self) { time in
-                    ShowMenu(time: time, meals: vm.filteredMeals(for: time))
+        ZStack {
+            Theme.myBackgroundColor(forSchme: scheme)
+                .edgesIgnoringSafeArea(.all)
+            VStack(alignment: .leading, spacing: 18) {
+                HeaderButton(vm: vm)
+                subPlace()
+                ScrollView {
+                    ForEach(vm.times, id: \.self) { time in
+                        ShowMenu(vm: vm, time: time, meals: vm.filteredMeals(for: time))
+                    }
                 }
+                .scrollIndicators(.never)
+            }
+            .padding()
+        }
+    }
+    
+    @ViewBuilder
+    func subPlace() -> some View {
+        if vm.selectedPlace.needSubplace() {
+            HStack {
+                Menu {
+                    ForEach(vm.selectedPlace.returnSubplace(), id: \.self) { sub in
+                        Button {
+                            withAnimation(.bouncy) {
+                                vm.selectedSubPlace = sub
+                            }
+                        } label: { Label(sub, systemImage: sub.subToIcon()) }
+                    }
+                } label: {
+                    Label(
+                        title: { Text(vm.selectedSubPlace).font(.title2).bold() },
+                        icon: { Image(systemName: "chevron.down") }
+                    )
+                    .foregroundColor(.primary)
+                }
+                Spacer()
             }
         }
-        .padding()
     }
 }
 
@@ -59,12 +90,14 @@ fileprivate struct PlaceButton: View {
             .onTapGesture {
                 withAnimation(.bouncy) {
                     vm.selectedPlace = place
+                    vm.selectedSubPlace = vm.selectedPlace.initSubplace()
                 }
             }
     }
 }
 
 fileprivate struct ShowMenu: View {
+    @ObservedObject var vm: MainViewModel
     let time: Time
     let meals: [Meal]
     
@@ -78,14 +111,19 @@ fileprivate struct ShowMenu: View {
                 .frame(height: 1)
                 .foregroundStyle(.primary.opacity(0.5))
                 .padding(.vertical, -5)
-            ForEach(meals) { meal in
-                Text(meal.menu.replacingOccurrences(of: " ", with: "\n"))
-                    .font(.title3)
+            if meals.isEmpty {
+                Text("운영하지 않습니다").font(.title3)
+            } else {
+                ForEach(meals) { meal in
+                    Text(meal.menu.replacingOccurrences(of: " ", with: "\n"))
+                        .font(.title3)
+                }
+                
             }
             Spacer()
         }
     }
-}   
+}
 
 #Preview {
     MainView()

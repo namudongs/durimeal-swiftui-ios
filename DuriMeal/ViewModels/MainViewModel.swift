@@ -10,7 +10,8 @@ import SwiftUI
 class MainViewModel: ObservableObject {
     @Published var meals: [Meal] = []
     @Published var selectedPlace: Place = .saerom
-    @Published var day: String = "화"
+    @Published var selectedSubPlace: String = Place.bakrok.returnSubplace().first!
+    @Published var day: String = "월"
     
     private var manager = SwiftSoupManager()
     
@@ -40,8 +41,19 @@ class MainViewModel: ObservableObject {
     }
     
     func filteredMeals(for time: Time) -> [Meal] {
-        return meals.filter {
-            $0.place == selectedPlace.rawValue && $0.day == day && $0.time == time.rawValue
+        return if selectedPlace.needSubplace() {
+            meals.filter {
+                $0.place == selectedPlace.rawValue 
+                && $0.day == day
+                && $0.time == time.rawValue
+                && $0.subPlace == selectedSubPlace
+            }
+        } else {
+            meals.filter {
+                $0.place == selectedPlace.rawValue 
+                && $0.day == day
+                && $0.time == time.rawValue
+            }
         }
     }
 }
