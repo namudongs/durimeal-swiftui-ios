@@ -111,14 +111,13 @@ fileprivate struct ShowMenu: View {
                 .frame(height: 1)
                 .foregroundStyle(.primary.opacity(0.5))
                 .padding(.vertical, -5)
-            if meals.isEmpty {
+            if meals.isEmpty || meals.first!.menu.count < 7 {
                 Text("운영하지 않습니다").font(.title3)
             } else {
                 ForEach(meals) { meal in
                     Text(meal.menu.replacingOccurrences(of: " ", with: "\n"))
                         .font(.title3)
                 }
-                
             }
             Spacer()
         }

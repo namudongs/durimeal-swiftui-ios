@@ -10,13 +10,13 @@ import Foundation
 enum Place: String, CaseIterable {
     case saerom = "새롬관"
     case eroom = "이룸관"
-    case bakrok = "백록관"
     case chunji = "천지관"
+    case bakrok = "백록관"
     case duri = "두리관"
     
     func needSubplace() -> Bool {
         switch self {
-        case .bakrok, .chunji, .duri:
+        case .chunji, .bakrok, .duri:
             return true
         case .saerom, .eroom:
             return false
@@ -25,10 +25,10 @@ enum Place: String, CaseIterable {
     
     func returnSubplace() -> [String] {
         switch self {
-        case .bakrok:
-            return ["천원의 아침밥", "백록한라산", "뚝배기(THE진국) 한그릇/플러스", "양식", "스낵", "백록정식"]
         case .chunji:
             return ["천원의 아침밥", "천지백두산", "특식/한식(랜덤)", "양식", "스낵", "하루정식"]
+        case .bakrok:
+            return ["천원의 아침밥", "백록한라산", "뚝배기(THE진국) 한그릇/플러스", "양식", "스낵", "백록정식"]
         case .duri:
             return ["크누정식", "뚝배기정식", "돈가스정식", "크누석식"]
         default:
@@ -38,7 +38,7 @@ enum Place: String, CaseIterable {
     
     func initSubplace() -> String {
         switch self {
-        case .bakrok, .chunji:
+        case .chunji, .bakrok:
             return "천원의 아침밥"
         case .duri:
             return "크누정식"

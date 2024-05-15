@@ -11,7 +11,7 @@ class MainViewModel: ObservableObject {
     @Published var meals: [Meal] = []
     @Published var selectedPlace: Place = .saerom
     @Published var selectedSubPlace: String = Place.bakrok.returnSubplace().first!
-    @Published var day: String = "월"
+    @Published var day: String = "목"
     
     private var manager = SwiftSoupManager()
     
