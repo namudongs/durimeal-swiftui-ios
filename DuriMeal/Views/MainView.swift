@@ -25,6 +25,7 @@ struct MainView: View {
 
 fileprivate struct HeaderButton: View {
     @ObservedObject var vm: MainViewModel
+    @ScaledMetric(relativeTo: .title2) var dynamicHeight = 30
     
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
@@ -39,7 +40,7 @@ fileprivate struct HeaderButton: View {
                     }
                 }
             }
-            .frame(maxHeight: vm.dynamicHeight)
+            .frame(maxHeight: dynamicHeight)
         }
     }
 }
@@ -58,7 +59,6 @@ fileprivate struct PlaceButton: View {
             .onTapGesture {
                 withAnimation(.bouncy) {
                     vm.selectedPlace = place
-                    vm.day = "수"
                 }
             }
     }

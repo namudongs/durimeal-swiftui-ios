@@ -11,7 +11,7 @@ class MainViewModel: ObservableObject {
     @Published var meals: [Meal] = []
     @Published var selectedPlace: Place = .saerom
     @Published var day: String = "화"
-    @ScaledMetric(relativeTo: .title2) var dynamicHeight = 30
+    
     private var manager = SwiftSoupManager()
     
     let places: [Place] = Place.allCases
