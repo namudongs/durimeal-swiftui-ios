@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @ObservedObject var vm = MealViewModel()
+    @ScaledMetric(relativeTo: .title2) var dynamicHeight = 30
     
     var body: some View {
         VStack(spacing: 20) {
@@ -21,11 +22,11 @@ struct MainView: View {
                             Rectangle()
                                 .frame(width: 2)
                                 .foregroundStyle(.primary.opacity(0.2))
-                                .padding(.vertical, -5)
+                                .padding(.vertical, 5)
                         }
                     }
                 }
-                .frame(maxHeight: 30)
+                .frame(maxHeight: dynamicHeight)
             }
             // HeaderButtons End
             ScrollView(showsIndicators: false) {
