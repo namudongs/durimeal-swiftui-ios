@@ -9,7 +9,11 @@ import SwiftUI
 
 class MealViewModel: ObservableObject {
     @Published var meals: [Meal] = []
+    @Published var selectedPlace: Place = .saerom
     private var manager = SwiftSoupManager()
+    
+    let places: [Place] = Place.allCases
+    let times: [Time] = Time.allCases
     
     init() {
         fetchMeals()
@@ -31,8 +35,8 @@ class MealViewModel: ObservableObject {
                 self.meals.append(contentsOf: meals)
             }
         }
-        
-       
     }
+    
+    
 }
 

@@ -13,7 +13,7 @@ struct DuriMealApp: App {
     
     var body: some Scene {
         WindowGroup {
-            TempView()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }

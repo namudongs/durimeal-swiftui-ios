@@ -14,7 +14,8 @@
 		179790182B9C39F30094F918 /* DuriMeal.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 179790162B9C39F30094F918 /* DuriMeal.xcdatamodeld */; };
 		179A63512BE74322005D78B4 /* SwiftSoupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A63502BE74322005D78B4 /* SwiftSoupManager.swift */; };
 		179A63532BE778A0005D78B4 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179A63522BE778A0005D78B4 /* Int+Extension.swift */; };
-		179D4CE92BE5FEB100DF77C8 /* TempView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4CE82BE5FEB100DF77C8 /* TempView.swift */; };
+		179D4CE92BE5FEB100DF77C8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179D4CE82BE5FEB100DF77C8 /* MainView.swift */; };
+		179F6E532BF49B66008BEF0D /* Enum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179F6E522BF49B66008BEF0D /* Enum.swift */; };
 		17DAA41C2BA5797A00FB63CA /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAA41B2BA5797A00FB63CA /* Meal.swift */; };
 		17DAA4262BA7DAD900FB63CA /* MealViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DAA4252BA7DAD900FB63CA /* MealViewModel.swift */; };
 		4E1A64A0A23D822BD7D7D6B6 /* Pods_DuriMeal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EE7532406B36C6CDD5E0C205 /* Pods_DuriMeal.framework */; };
@@ -31,7 +32,8 @@
 		1797901A2B9C39F30094F918 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		179A63502BE74322005D78B4 /* SwiftSoupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSoupManager.swift; sourceTree = "<group>"; };
 		179A63522BE778A0005D78B4 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
-		179D4CE82BE5FEB100DF77C8 /* TempView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempView.swift; sourceTree = "<group>"; };
+		179D4CE82BE5FEB100DF77C8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		179F6E522BF49B66008BEF0D /* Enum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enum.swift; sourceTree = "<group>"; };
 		17DAA41B2BA5797A00FB63CA /* Meal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		17DAA4252BA7DAD900FB63CA /* MealViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealViewModel.swift; sourceTree = "<group>"; };
 		2100CC2B35E3277BB629CF22 /* Pods-DuriMeal.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DuriMeal.release.xcconfig"; path = "Target Support Files/Pods-DuriMeal/Pods-DuriMeal.release.xcconfig"; sourceTree = "<group>"; };
@@ -72,17 +74,14 @@
 		1797900A2B9C39F20094F918 /* DuriMeal */ = {
 			isa = PBXGroup;
 			children = (
+				179F6E4E2BF499F3008BEF0D /* App */,
 				17DAA41D2BA6CE0000FB63CA /* Models */,
 				17DAA41E2BA6CE0700FB63CA /* Views */,
+				179F6E512BF49A76008BEF0D /* ViewModels */,
 				17DAA41F2BA6CE1100FB63CA /* Managers */,
-				1797900B2B9C39F20094F918 /* DuriMealApp.swift */,
-				179790142B9C39F30094F918 /* Persistence.swift */,
-				1797900F2B9C39F30094F918 /* Assets.xcassets */,
-				179790192B9C39F30094F918 /* DuriMeal.entitlements */,
-				179790162B9C39F30094F918 /* DuriMeal.xcdatamodeld */,
-				1797901A2B9C39F30094F918 /* Info.plist */,
+				179F6E502BF49A14008BEF0D /* Extensions */,
+				179F6E4F2BF49A01008BEF0D /* Resources */,
 				179790112B9C39F30094F918 /* Preview Content */,
-				179A63522BE778A0005D78B4 /* Int+Extension.swift */,
 			);
 			path = DuriMeal;
 			sourceTree = "<group>";
@@ -95,10 +94,47 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		179F6E4E2BF499F3008BEF0D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1797900B2B9C39F20094F918 /* DuriMealApp.swift */,
+				179790142B9C39F30094F918 /* Persistence.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		179F6E4F2BF49A01008BEF0D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1797900F2B9C39F30094F918 /* Assets.xcassets */,
+				179790192B9C39F30094F918 /* DuriMeal.entitlements */,
+				179790162B9C39F30094F918 /* DuriMeal.xcdatamodeld */,
+				1797901A2B9C39F30094F918 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		179F6E502BF49A14008BEF0D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				179A63522BE778A0005D78B4 /* Int+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		179F6E512BF49A76008BEF0D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				17DAA4252BA7DAD900FB63CA /* MealViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		17DAA41D2BA6CE0000FB63CA /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				17DAA41B2BA5797A00FB63CA /* Meal.swift */,
+				179F6E522BF49B66008BEF0D /* Enum.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -106,8 +142,7 @@
 		17DAA41E2BA6CE0700FB63CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				179D4CE82BE5FEB100DF77C8 /* TempView.swift */,
-				17DAA4252BA7DAD900FB63CA /* MealViewModel.swift */,
+				179D4CE82BE5FEB100DF77C8 /* MainView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,9 +288,10 @@
 			files = (
 				179790182B9C39F30094F918 /* DuriMeal.xcdatamodeld in Sources */,
 				179790152B9C39F30094F918 /* Persistence.swift in Sources */,
-				179D4CE92BE5FEB100DF77C8 /* TempView.swift in Sources */,
+				179D4CE92BE5FEB100DF77C8 /* MainView.swift in Sources */,
 				179A63532BE778A0005D78B4 /* Int+Extension.swift in Sources */,
 				17DAA4262BA7DAD900FB63CA /* MealViewModel.swift in Sources */,
+				179F6E532BF49B66008BEF0D /* Enum.swift in Sources */,
 				179A63512BE74322005D78B4 /* SwiftSoupManager.swift in Sources */,
 				17DAA41C2BA5797A00FB63CA /* Meal.swift in Sources */,
 				1797900C2B9C39F20094F918 /* DuriMealApp.swift in Sources */,
@@ -390,14 +426,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DuriMeal/DuriMeal.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DuriMeal/Resources/DuriMeal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DuriMeal/Preview Content\"";
 				DEVELOPMENT_TEAM = 47PZ53ZAF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DuriMeal/Info.plist;
+				INFOPLIST_FILE = DuriMeal/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -426,14 +462,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = DuriMeal/DuriMeal.entitlements;
+				CODE_SIGN_ENTITLEMENTS = DuriMeal/Resources/DuriMeal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"DuriMeal/Preview Content\"";
 				DEVELOPMENT_TEAM = 47PZ53ZAF2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = DuriMeal/Info.plist;
+				INFOPLIST_FILE = DuriMeal/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
