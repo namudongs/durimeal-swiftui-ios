@@ -17,6 +17,7 @@ struct MainView: View {
                 .edgesIgnoringSafeArea(.all)
             VStack(alignment: .leading, spacing: 18) {
                 HeaderButton(vm: vm)
+                WeeklyButton()
                 subPlace()
                 ScrollView {
                     ForEach(vm.times, id: \.self) { time in
@@ -42,15 +43,30 @@ struct MainView: View {
                         } label: { Label(sub, systemImage: sub.subToIcon()) }
                     }
                 } label: {
-                    Label(
-                        title: { Text(vm.selectedSubPlace).font(.title2).bold() },
-                        icon: { Image(systemName: "chevron.down") }
-                    )
-                    .foregroundColor(.primary)
+                    HStack {
+                        Text(vm.selectedSubPlace).font(.title2).bold()
+                        Image(systemName: "chevron.up.chevron.down")
+                    }
                 }
                 Spacer()
             }
         }
+    }
+}
+
+fileprivate struct WeeklyButton: View {
+    @State var selected: Bool = false
+    let days: [String] = ["월", "화", "수", "목", "금", "토", "일"]
+    
+    var body: some View {
+        HStack {
+            ForEach(days, id: \.self) { day in
+                Spacer()
+                Text("\(day)")
+                Spacer()
+            }
+        }
+        .padding(-5)
     }
 }
 
